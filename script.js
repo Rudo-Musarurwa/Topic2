@@ -1,5 +1,6 @@
 function myClickEvent() {
-  alert('The button was pressed');
+  var element = document.getElementById('circle');
+  element.style.backgroundColor = 'blue';
 }
 
 function myLoadEvent() {
