@@ -24,18 +24,22 @@ function moveRight() {
 
 
 
+var interval = 0; 
 function myKeyDown(event) {
+
+  clearInterval(interval);
+
   if (event.keyCode == 37) {
-    setInterval(moveLeft, 10);
+    interval = setInterval(moveLeft, 10);
   }
   if (event.keyCode == 38) {
-    setInterval(moveUp, 10);
+    interval =setInterval(moveUp, 10);
   }
   if (event.keyCode == 40) {
-    setInterval(moveDown, 10);
+    interval =setInterval(moveDown, 10);
   }
   if (event.keyCode == 39) {
-    setInterval(moveRight, 10);
+    interval =setInterval(moveRight, 10);
   }
 }
 
