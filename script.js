@@ -1,24 +1,41 @@
+function moveUp() {
+  var element = document.getElementById('circle');
+  var positionTop = element.offsetTop;
+  element.style.top = positionTop - 1 + 'px';
+}
+
+function moveDown() {
+  var element = document.getElementById('circle');
+  var positionTop = element.offsetTop;
+  element.style.top = positionTop + 1 + 'px';
+}
+
+function moveLeft() {
+  var element = document.getElementById('circle');
+  var positionLeft = element.offsetLeft;
+  element.style.left = positionLeft - 1 + 'px';
+}
+
+function moveRight() {
+  var element = document.getElementById('circle');
+  var positionLeft = element.offsetLeft;
+  element.style.left = positionLeft + 1 + 'px';
+}
+
+
+
 function myKeyDown(event) {
-	console.log(event.keyCode);
   if (event.keyCode == 37) {
-	  var element = document.getElementById('circle');
-	  var positionLeft = element.offsetLeft;
-	  element.style.left = positionLeft - 10 + 'px';
+    setInterval(moveLeft, 10);
   }
   if (event.keyCode == 38) {
-	  var element = document.getElementById('circle');
-	  var positionTop = element.offsetTop;
-	  element.style.top = positionTop - 10 + 'px';
+    setInterval(moveUp, 10);
   }
   if (event.keyCode == 40) {
-	  var element = document.getElementById('circle');
-	  var positionTop = element.offsetTop;
-	  element.style.top = positionTop + 10 + 'px';
+    setInterval(moveDown, 10);
   }
   if (event.keyCode == 39) {
-    var element = document.getElementById('circle');
-  	var positionLeft = element.offsetLeft;
- 	element.style.left = positionLeft + 10 + 'px';
+    setInterval(moveRight, 10);
   }
 }
 
