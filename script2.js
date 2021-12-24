@@ -1,3 +1,8 @@
+var interval = 0; // global variable. Point #2 of exercise 10
+
+var test = '123';
+alert(test.valueOf()+1)
+
 function moveUp() {
   var element = document.getElementById('circle');
   var positionTop = element.offsetTop;
@@ -23,6 +28,9 @@ function moveRight() {
 }
 
 function myKeyDown(event) {
+
+  clearInterval(interval); // ponit #3 from exercise 10
+
   if (event.keyCode == 37) {
     setInterval(moveLeft, 10);
   }
@@ -36,11 +44,9 @@ function myKeyDown(event) {
     setInterval(moveRight, 10);
   }
 }
-function myLoadFunction(
-  
-){
 
+function myLoadEvent() {
+  document.addEventListener('keydown', myKeyDown);
 }
 
-document.addEventListener('click', myLoadFunction);
 document.addEventListener('DOMContentLoaded', myLoadEvent);
